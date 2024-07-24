@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @RequestMapping(path = "/Snipers")
 @Slf4j
-@CrossOrigin(origins = "*")
+@CrossOrigin
 public class SniperController {
 
     private final SniperService sniperService;
