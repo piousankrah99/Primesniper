@@ -5,13 +5,13 @@ FROM maven:3.8.4-openjdk-17-slim AS build
 WORKDIR /app
 
 # Copy the POM file to download dependencies
-COPY pom.xml .
+COPY BACK-END/pom.xml .
 
 # Download dependencies
 RUN mvn dependency:go-offline -B
 
 # Copy the source code to the container
-COPY src ./src
+COPY BACK-END/src ./src
 
 # Build the application
 RUN mvn package -DskipTests
