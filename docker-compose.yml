@@ -5,9 +5,9 @@ services:
     image: postgres:latest
     container_name: postgres-container
     environment:
-       POSTGRES_DB: primesnipersdb
-       POSTGRES_USER: PiousAn
-       POSTGRES_PASSWORD: Pious123
+       POSTGRES_DB: primesniperpostgresdbname
+       POSTGRES_USER: primesniperpostgresdbname_user
+       POSTGRES_PASSWORD: awq26MbjL0086xopIOCwfFmoSZEiDLpx
     ports:
       - "5432:5432"
     volumes:
@@ -39,11 +39,12 @@ services:
 
   backend:
     build: ./BACK-END
+      dockerfile: Dockerfile
     container_name: primesniper-container-backend
     environment:
-       db-url: jdbc:postgresql://db:5432/primesnipersdb
-       db-username: PiousAn
-       db-password: Pious123
+       DATABASE_URL: jdbc:postgresql://dpg-d17uqj6mcj7s73cbf3d0-a:5432/primesniperpostgresdbname
+       DATABASE_USERNAME: primesniperpostgresdbname_user
+       DATABASE_PASSWORD: awq26MbjL0086xopIOCwfFmoSZEiDLpx
     ports:
       - "8081:8081"
     depends_on:
