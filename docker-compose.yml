@@ -39,6 +39,7 @@ services:
 
   backend:
     build: ./BACK-END
+      context: .
       dockerfile: Dockerfile
     container_name: primesniper-container-backend
     environment:
